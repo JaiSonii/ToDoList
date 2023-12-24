@@ -5,9 +5,10 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 
-mongoose.connect("mongodb://127.0.0.1:27017/todolistDB");
+mongoose.connect("mongodb+srv://admin:admin@cluster0.mi6v9xu.mongodb.net/todolistDB");
 
 const app = express();
+const port = process.env.PORT||5000
 
 app.set('view engine', 'ejs');
 
@@ -155,7 +156,7 @@ app.get("/about", function (req, res) {
   res.render("about");
 });
 
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log("Server started on port 3000");
 });
 
